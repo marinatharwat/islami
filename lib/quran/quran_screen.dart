@@ -3,7 +3,7 @@ import 'package:islami/my_theme.dart';
 import 'package:islami/quran/item_sura_name.dart';
 
 class QuranScreen extends StatelessWidget {
-  List<String> suraNames  = [
+  List<String> suraNames = [
     "الفاتحه",
     "البقرة",
     "آل عمران",
@@ -140,18 +140,20 @@ class QuranScreen extends StatelessWidget {
         ),
         Expanded(
           child: ListView.separated(
-            separatorBuilder: (context,Index){
-              return  Divider(
+            separatorBuilder: (context, Index) {
+              return Divider(
                 thickness: 2,
                 color: MyTheme.primaryColor,
               );
             },
-              itemBuilder:(context,Index) {
-               return  ItemSuraName( name: suraNames[Index], Index: Index,);
-    },
-            itemCount:suraNames.length ,
-
-    ),
+            itemBuilder: (context, Index) {
+              return ItemSuraName(
+                name: suraNames[Index],
+                Index: Index,
+              );
+            },
+            itemCount: suraNames.length,
+          ),
         )
       ],
     );

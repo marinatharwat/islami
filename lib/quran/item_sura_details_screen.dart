@@ -10,6 +10,7 @@ class ItemSuraDetailsScreen extends StatelessWidget {
         textAlign:TextAlign.center,
         '$name{${Index+1}}',
         style:Theme.of(context).textTheme.titleMedium,
+        textDirection: TextDirection.rtl,
 
       );
   }

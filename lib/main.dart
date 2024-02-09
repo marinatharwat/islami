@@ -14,16 +14,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
-   initialRoute:HomeScreen.routeName,
-        debugShowCheckedModeBanner: false,
-   routes:{
-    HomeScreen.routeName:(context)=> HomeScreen(),
-     SuraDetailsScreen.routeName:(context)=> SuraDetailsScreen(),
-     HadethDetailsScreen.routeName:(context)=> HadethDetailsScreen(),
-   },
-    theme:MyTheme.lightMode,
-   );
+    return MaterialApp(
+      initialRoute: HomeScreen.routeName,
+      debugShowCheckedModeBanner: false,
+      routes: {
+        HomeScreen.routeName: (context) => HomeScreen(),
+        SuraDetailsScreen.routeName: (context) => SuraDetailsScreen(),
+        HadethDetailsScreen.routeName: (context) => HadethDetailsScreen(),
+      },
+      theme: MyTheme.lightMode,
+    );
   }
 }
-

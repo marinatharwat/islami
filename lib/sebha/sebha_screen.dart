@@ -65,67 +65,69 @@ class _SebhaScreenState extends State<SebhaScreen>
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Column(
-
-        children: [
-          SizedBox(height: 30,),
-          GestureDetector(
-            onTap: () {
-              _increaseCounter();
-              _toggleRotation();
-            },
-            child:
-            Stack(
-              children: [
-                RotationTransition(
-                  turns: _controller,
-
-                  child:
-                  Padding(
-                    padding: const EdgeInsets.all(50.0),
-                    child: Image.asset('assets/images/sebha.png'),
+      child: SingleChildScrollView(
+        child: Column(
+        
+          children: [
+            SizedBox(height: 20,),
+            GestureDetector(
+              onTap: () {
+                _increaseCounter();
+                _toggleRotation();
+              },
+              child:
+              Stack(
+                children: [
+                  RotationTransition(
+                    turns: _controller,
+        
+                    child:
+                    Padding(
+                      padding: const EdgeInsets.all(60.0),
+                      child: Image.asset('assets/images/sebha.png'),
+                    ),
+                  ),
+                  Positioned(
+                    top: -1,
+                    right:100,
+                    child: Image.asset('assets/images/part_sepha.png'),
+                  ),
+                ],
+              )
+            ),
+            const SizedBox(height: 10,),
+            Text("Number of praises", style: Theme.of(context).textTheme.titleMedium,),
+            const SizedBox(height: 30,),
+            Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                color: MyTheme.LightColor,
+              ),
+              height: 90,
+              width: 80,
+              child: Center(
+                child: Text("$counter", style: Theme.of(context).textTheme.titleMedium),
+              ),
+            ),
+            const SizedBox(height: 30,),
+            ElevatedButton(
+              onPressed: () {},
+              style: ButtonStyle(
+                minimumSize: MaterialStateProperty.all(const Size(150, 50)),
+                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
                   ),
                 ),
-                Positioned(
-                  top: -10,
-                  right:100,
-                  child: Image.asset('assets/images/part_sepha.png'),
-                ),
-              ],
-            )
-          ),
-          const SizedBox(height: 10,),
-          Text("Number of praises", style: Theme.of(context).textTheme.titleMedium,),
-          const SizedBox(height: 30,),
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
-              color: MyTheme.LightColor,
-            ),
-            height: 90,
-            width: 80,
-            child: Center(
-              child: Text("$counter", style: Theme.of(context).textTheme.titleMedium),
-            ),
-          ),
-          const SizedBox(height: 30,),
-          ElevatedButton(
-            onPressed: () {},
-            style: ButtonStyle(
-              minimumSize: MaterialStateProperty.all(const Size(150, 50)),
-              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30),
-                ),
+                backgroundColor: MaterialStateProperty.all<Color>(MyTheme.primaryColor,),
               ),
-              backgroundColor: MaterialStateProperty.all<Color>(MyTheme.primaryColor,),
-            ),
-            child: Text(
-              getButtonText(),
-                style: Theme.of(context).textTheme.titleMedium,
-            ),
-          )
-        ],
+              child: Text(
+                getButtonText(),
+                  style: Theme.of(context).textTheme.titleMedium,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
