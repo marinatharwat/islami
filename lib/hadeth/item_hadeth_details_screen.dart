@@ -10,6 +10,7 @@ class ItemHadethDetailsScreen extends StatelessWidget {
 
         content,
         style:Theme.of(context).textTheme.titleMedium,
+        textDirection: TextDirection.rtl,
 
       );
   }

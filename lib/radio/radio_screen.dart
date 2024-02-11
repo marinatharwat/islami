@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class RadioScreen extends StatefulWidget {
   const RadioScreen({Key? key}) : super(key: key);
@@ -18,7 +19,8 @@ class _RadioScreenState extends State<RadioScreen> {
           ),
           const SizedBox(height: 30,),
            Center(
-            child: Text("Holy Quran Radio",style:Theme.of(context).textTheme.titleMedium),
+            child: Text(AppLocalizations.of(context)!.holy_quran_radio,
+                style:Theme.of(context).textTheme.titleMedium),
           ),
           const SizedBox(height: 80,),
 

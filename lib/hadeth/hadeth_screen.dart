@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami/hadeth/item_hadeth_name.dart';
 import 'package:islami/my_theme.dart';
-import 'package:islami/quran/item_sura_name.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HadethScreen extends StatefulWidget {
   @override
@@ -29,22 +29,24 @@ List <Hadeth> ahadethList=[];
         ),
         Divider(
           thickness: 3,
-          color: MyTheme.primaryColor,
+          color: MyTheme.primaryLight,
         ),
-        Text("Hadiths", style: Theme.of(context).textTheme.titleSmall),
+        Text(AppLocalizations.of(context)!.hadeth,
+
+            style: Theme.of(context).textTheme.titleSmall),
         Divider(
           thickness: 3,
-          color: MyTheme.primaryColor,
+          color: MyTheme.primaryLight,
         ),
         ahadethList.isEmpty?
-            Center(child: CircularProgressIndicator(color: MyTheme.primaryColor,))
+            Center(child: CircularProgressIndicator(color: MyTheme.primaryLight,))
         :
         Expanded(
           child: ListView.separated(
             separatorBuilder: (context,Index){
               return  Divider(
                 thickness: 2,
-                color: MyTheme.primaryColor,
+                color: MyTheme.primaryLight,
               );
             },
             itemBuilder:(context,Index) {
